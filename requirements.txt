@@ -1,0 +1,13 @@
+nltk
+torch
+tensorflow
+mlogger
+torchvision
+setuptools
+numpy
+visdom
+tqdm
+dm-sonnet
+waitGPU
+PyYAML
+psutil

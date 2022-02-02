@@ -1,0 +1,2 @@
+- {model: wrn, dataset: cifar100, batch_size: 128, opt: alig, eta: 0.01, max_norm: 50, loss: ce, tag: test, epochs: 200}
+
