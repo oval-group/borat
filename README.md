@@ -21,4 +21,6 @@ comparison of BORAT to other single hyperparameter optimisation algorithms. Our 
 iments demonstrate BORAT matches the state-of-the-art generalisation performance for
 these methods and is the most robust.
 
+![borat_primal_problem](borat_prox_prob.png)
+
 
