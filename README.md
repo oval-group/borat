@@ -1,6 +1,18 @@
 # BORAT
-This is the pytorch implementation of our work [A Stochastic Bundle Method for Interpolating Networks](https://arxiv.org/pdf/2201.12678.pdf) publish in JMLR issue 20.
+This is the pytorch implementation of our work [A Stochastic Bundle Method for Interpolating Networks](https://arxiv.org/pdf/2201.12678.pdf) publish in JMLR issue 20. If this code is useful please cite as:
 
+```
+
+@Article{paren2022stochastic,
+  author       = {Paren, Alasdair and Berrada, Leonard and Poudel, Rudra PK and Kumar, M Pawan},
+  title        = {A Stochastic Bundle Method for Interpolating Networks},
+  journal      = {Journal of Machine Learning Research},
+  pages        = {1--57},
+  volume       = {23},
+  year         = {2022},
+}
+
+```
 
 # Abstract
 
@@ -20,6 +32,10 @@ non-convex settings. Using standard publicly available data sets, we provide a t
 comparison of BORAT to other single hyperparameter optimisation algorithms. Our exper-
 iments demonstrate BORAT matches the state-of-the-art generalisation performance for
 these methods and is the most robust.
+
+# Primal Problem
+
+
 
 ![borat_primal_problem](borat_prox_prob.png)
 
