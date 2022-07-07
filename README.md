@@ -40,7 +40,7 @@ these methods and is the most robust.
 At each time BORAT forms uses a bundle of size N to approimate the loss:
 
 
-<img src=images/borat_primal.png width="200" height="50">
+<img src=images/borat_primal.png width="500" height="100">
 
 or viewed pictorially:
 
