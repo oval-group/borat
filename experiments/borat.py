@@ -5,7 +5,7 @@ import torch.optim as optim
 from torch.optim.optimizer import required
 
 class BORAT(optim.Optimizer):
-    def __init__(self, params, model, loss, eta=None, n=1, momentum=0, projection_fn=None, sgd_forward=True, same_batch=True, eps=1e-8, debug=False):
+    def __init__(self, params, model, loss, eta=None, n=1, momentum=0, projection_fn=None, sgd_forward=False, same_batch=False, eps=1e-8, debug=False):
         if eta is not None and eta <= 0.0:
             raise ValueError("Invalid eta: {}".format(eta))
         if momentum < 0.0:

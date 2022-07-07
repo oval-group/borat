@@ -1,4 +1,4 @@
-from data.loaders import loaders_cifar, loaders_mnist, loaders_svhn, loaders_imagenet
+from data.loaders import loaders_cifar, loaders_mnist, loaders_svhn, loaders_imagenet, loaders_tiny_imagenet
 
 def get_data_loaders(args):
 
@@ -15,6 +15,8 @@ def get_data_loaders(args):
         loader_train, loader_val, loader_test = loaders_cifar(**vars(args))
     elif 'svhn' in args.dataset:
         loader_train, loader_val, loader_test = loaders_svhn(**vars(args))
+    elif args.dataset == 'tiny_imagenet':
+        loader_train, loader_val, loader_test = loaders_tiny_imagenet(**vars(args))
     elif args.dataset == 'imagenet':
         loader_train, loader_val, loader_test = loaders_imagenet(**vars(args))
     else:

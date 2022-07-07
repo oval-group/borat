@@ -1,6 +1,7 @@
 import torch
 from tqdm import tqdm
 from utils import accuracy, regularization
+from alig import l2_projection
 
 def train(model, loss, optimizer, loader, args, xp):
 
@@ -23,9 +24,16 @@ def train(model, loss, optimizer, loader, args, xp):
         optimizer.zero_grad()
         loss_value.backward()
 
+        if args.max_norm:
+            l2_projection(model.parameters(), args.max_norm)
+
         # optimization step
         if 'borat' in args.opt:
             optimizer.step(lambda: float(loss_value), x, y)
+        elif 'alig' in args.opt:
+            optimizer.step(lambda: float(loss_value))
+        else:
+            optimizer.step()
 
         if 'borat' in args.opt and not optimizer.n == 0:
             continue

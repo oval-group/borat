@@ -84,7 +84,7 @@ def _add_optimization_parser(parser):
 
 def _add_loss_parser(parser):
     l_parser = parser.add_argument_group(title='Loss parameters')
-    l_parser.add_argument('--weight_decay', type=float, default=0,
+    l_parser.add_argument('--weight_decay', type=float, default=0.0,
                           help="l2-regularization")
     l_parser.add_argument('--max_norm', type=float, default=None,
                           help="maximal l2-norm for constrained optimizers")
@@ -134,7 +134,7 @@ def set_xp_name(args):
         xp_name = args.log_dir
         xp_name += 'results/{data}/'.format(data=args.dataset)
         xp_name += "{model}{data}-{opt}--n-{n}--eta-{eta}--l2-{l2}--b-{b}-{tag}"
-        l2 = args.max_norm if (args.opt == 'alig') or (args.opt == 'borat') else args.weight_decay
+        l2 = args.max_norm if (args.opt == 'alig') or (args.opt == 'borat') or (args.opt == 'adam') else args.weight_decay
         data = args.dataset.replace("cifar", "")
         xp_name += "--momentum-{}".format(args.momentum)
         args.n = 2 if args.opt == 'alig' else args.n
@@ -165,6 +165,8 @@ def set_num_classes(args):
         args.n_classes = 10
     elif args.dataset == 'imagenet':
         args.n_classes = 1000
+    elif args.dataset == 'tiny_imagenet':
+        args.n_classes = 200
     else:
         raise ValueError
 

@@ -7,7 +7,7 @@ def create_jobs():
     wrn_opts = " --depth 40 --width 4 "
     dn_opts = " --depth 40 --growth 40 --epochs 300 "
 
-    with open("reproduce/hparams/alig.yaml", "r") as f:
+    with open("reproduce/hparams/test.yaml", "r") as f:
         hparams = yaml.safe_load(f)
 
     jobs = []

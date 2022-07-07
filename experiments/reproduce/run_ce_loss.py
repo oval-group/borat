@@ -9,8 +9,6 @@ def create_jobs():
 
     with open("reproduce/hparams/ce_loss.yaml", "r") as f:
     # with open("reproduce/hparams/hinge_loss.yaml", "r") as f:
-    # with open("reproduce/hparams/ap_loss.yaml", "r") as f:
-    # with open("reproduce/hparams/compare.yaml", "r") as f:
         hparams = yaml.safe_load(f)
 
     jobs = []

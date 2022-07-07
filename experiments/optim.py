@@ -1,4 +1,5 @@
 import torch.optim
+import torch
 
 from alig import AliG
 from borat import BORAT
@@ -16,6 +17,8 @@ def get_optimizer(args, model, loss, parameters):
     elif args.opt == 'borat':
         optimizer = BORAT(parameters, model, loss, eta=args.eta, n=args.n, momentum=args.momentum,
                          projection_fn=lambda: l2_projection(parameters, args.max_norm), sgd_forward=args.sgdf, same_batch=args.same_batch, debug=args.debug)
+    elif args.opt == 'adam':
+        optimizer = torch.optim.Adam(parameters, lr=args.eta, weight_decay=args.weight_decay)
     else:
         raise ValueError(args.opt)
 
