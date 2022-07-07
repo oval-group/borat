@@ -101,11 +101,19 @@ If there is regularization, it should be expressed as a constraint (see example 
 
 # Reproducing the Results
 
-The following command lines assume that the current working directory is experiments.
+The following command lines assume that the current working directory is experiments. For cross entropy loss experiments (top row figure 6):
 
 ```
-reproduce/run_no_wait_GPU.py
+python reproduce/run_ce_loss.py
 ```
+
+For hinge loss experiments (bottom row figure 6):
+
+```
+python reproduce/run_svm_loss.py
+```
+
+for a single run please modify the following arguments as approprate:
 
 ```
 python main.py --model wrn --dataset cifar100 --batch_size 128 --opt borat --eta 0.01 --max_norm 50 --loss ce --tag test --epochs 200 --depth 40 --width 4
