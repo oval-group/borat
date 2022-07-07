@@ -48,7 +48,6 @@ This code should work for PyTorch >= 1.0 in python3. Please install the necessar
 
 ```
 install -r requirements.txt
-
 ```
 
 # Usage
@@ -84,8 +83,8 @@ optimizer.step(lambda: float(loss_value), x, y)
 
 # Note: BORAT only perform an update even N-1 steps
 
-if not optimizer.n == 0:
-       continue
+if optimizer.n == 0:
+    # update metrics here
 ```
 
 # Technical Requirements for Applicability
